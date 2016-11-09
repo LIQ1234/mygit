@@ -9,6 +9,8 @@
     <link rel="shortcut icon" href="img/logo.png">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/less.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/index.js"></script>
 </head>
 <body>
 <div class="header">
@@ -24,17 +26,45 @@
         <li class="bag"><a href=""></a></li>
     </ul>
     <ul class="smenu col-l-show">
-        <li><span>=</span>
-            <div class="menubox">
-                <ul class="menu-head">
-                    <li class="close"><a href=""></a></li>
-                    <li class="index"><a href=""></a></li>
-                </ul>
-            </div>
+        <li><span class="menu_open">=</span>
         </li>
         <li class="index"><a href=""></a></li>
         <li class="bag"><a href=""></a></li>
     </ul>
+</div>
+<div class="small_nav container">
+    <div class="nav_con row">
+        <ul class="nav_list col-l-show">
+            <li class="menu_close"><a href="javascript:;">X</a></li>
+            <li class="index"><a href=""></a></li>
+        </ul>
+        <ul class="small_nav_list">
+            <li class="">
+                <a href="">Mac</a>
+            </li>
+            <li class="">
+                <a href="">iPad</a>
+            </li>
+            <li class="">
+                <a href="">iPhone</a>
+            </li>
+            <li class="">
+                <a href="">Watch</a>
+            </li>
+            <li class="">
+                <a href="">Music</a>
+            </li>
+            <li class="">
+                <a href="">技术支持</a>
+            </li>
+            <li class="search">
+                <a href="">
+                    <span class="small_nav_text">搜索 apple.com</span>
+                </a>
+            </li>
+
+        </ul>
+    </div>
 </div>
 <div class="banner">
     <div>
@@ -84,9 +114,9 @@
     <div class="foot">
         <h5>双镜头摄像头仅于 iPhone 7 Plus 提供。亮黑色外观仅于 128GB 及以上存储容量的机型提供。</h5>
         <div class="footcen">
-            <div>
+            <div class="foot_box">
                 <label>选购及了解</label>
-                <ul class="col-l-hide">
+                <ul class="foot_son col-l-hide">
                     <li><a href="">Mac</a></li>
                     <li><a href="">iPad</a></li>
                     <li><a href="">iPhone</a></li>
@@ -97,9 +127,9 @@
                     <li><a href="">配件</a></li>
                 </ul>
             </div>
-            <div>
+            <div class="foot_box">
                 <label>Apple Store 商店</label>
-                <ul class="col-l-hide">
+                <ul class="foot_son col-l-hide">
                     <li><a href="">查找零售店</a></li>
                     <li><a href="">Genius Bar 天才吧</a></li>
                     <li><a href="">讲座和学习</a></li>
@@ -113,33 +143,33 @@
                 </ul>
             </div>
             <div>
-                <div>
+                <div class="foot_box">
                     <label>教育应用</label>
-                    <ul class="col-l-hide">
+                    <ul class="foot_son col-l-hide">
                         <li><a href="">Apple 与教育</a></li>
                         <li><a href="">高校师生选购</a></li>
                     </ul>
                 </div>
-                <div>
+                <div  class="foot_box">
                     <label>商务应用</label>
-                    <ul class="col-l-hide">
+                    <ul class="foot_son col-l-hide">
                         <li><a href="">Apple 与商务</a></li>
                         <li><a href="">商务选购</a></li>
                     </ul>
                 </div>
             </div>
             <div>
-                <div>
+                <div  class="foot_box">
                     <label>帐户</label>
-                    <ul class="col-l-hide">
+                    <ul class="foot_son col-l-hide">
                         <li><a href="">管理你的 Apple ID</a></li>
                         <li><a href="">Apple Store 帐户</a></li>
                         <li><a href="">iCloud.com</a></li>
                     </ul>
                 </div>
-                <div>
+                <div  class="foot_box">
                     <label>Apple 价值观</label>
-                    <ul class="col-l-hide">
+                    <ul class="foot_son col-l-hide">
                         <li><a href="">辅助功能</a></li>
                         <li><a href="">环境责任</a></li>
                         <li><a href="">隐私</a></li>
@@ -147,9 +177,9 @@
                     </ul>
                 </div>
             </div>
-            <div>
+            <div  class="foot_box">
                 <label>关于 Apple</label>
-                <ul class="col-l-hide">
+                <ul class="foot_son col-l-hide">
                     <li><a href="">Apple 资讯</a></li>
                     <li><a href="">工作机会</a></li>
                     <li><a href="">媒体资讯</a></li>

@@ -12,13 +12,13 @@ a{
 
 /*header*/
 .header{
-  width:100%;height:44px;
+  width:100%;
   background: rgba(0,0,0,0.8);
   position:fixed;
   z-index:9;
+  .clear();
 }
 .menu{
-  height:44px;
   margin:auto 10px;
 }
 .menu>li{
@@ -26,24 +26,27 @@ a{
   float: left;
 }
 .menu>li>a{
-  height:44px;
+  width:100%;height:44px;
   line-height:44px;
 }
 .menu>li>a:hover{
-  color:#ccc;
+  opacity:0.7;
 }
 .index>a{
   width:100%;height:100%;
   background:url(../img/image_large.svg) no-repeat;
 }
 .search>a{
+  width:100%;height:100%;
   background:url(../img/image_search.svg) no-repeat;
 }
 .bag>a{
   width:100%;height:100%;
   background:url(../img/image_bag.svg) no-repeat;
 }
-
+.small_nav{
+  display: none;
+}
 /*banner*/
 .banner{
   width:100%;height:540px;
@@ -298,13 +301,18 @@ footer{
 }
 @media screen and (max-width:@num2){
   .header>.smenu{
-    width:100%;height:100%;
+    width:100%;height:44px;
+    background:rbga(0,0,0,0.7);
   }
   .header>.smenu>li{
-    width:48px;height:100%;position:absolute;
+    width:48px;height:44px;
+    position:absolute;
     text-align:center;line-height:40px;
   }
   .header>.smenu>li>span{
+    width:100%;height:100%;
+    display:block;
+    cursor:pointer;
     font-size:30px;color:#fff;
   }
   .header>.smenu>li:nth-child(1){
@@ -316,11 +324,49 @@ footer{
   .header>.smenu>li:nth-child(3){
     right:0;
   }
-  .menubox{
-    width:100%,;height:100%;
-    background:rbga(0,0,0,0.8);
+  .small_nav{
+    width:100%;
+    height:100%;
+    background: #000;
     position:absolute;
-    z-index:99;
+    top:0;left:0;
+    overflow: hidden;
+    z-index: 999;
+  }
+  .small_nav .nav_list{
+    width:100%;height:44px;
+    background: #000;
+  }
+  .small_nav .nav_list>li{
+    width:44px;height:44px;
+    float: left;
+  }
+  .menu_close{
+    text-align:center;
+    line-height:44px;
+  }
+  .menu_close>a{
+    font-size:20px;
+  }
+  .nav_list>.index{
+    margin-left:40%;
+  }
+  ul.small_nav_list{
+    padding-left:30px;
+  }
+  ul.small_nav_list li{
+    border-bottom:1px solid #333;
+  }
+  ul.small_nav_list li>a{
+    height:49px;line-height:49px;
+  }
+  ul.small_nav_list .small_nav_text{
+    margin-left: 28px;
+    cursor: text;
+    display: block;
+  }
+  ul.small_nav_list .search{
+    border-bottom:1px solid #fff;
   }
   .banner>div:nth-child(1)>a>div{
     background-image:url(../img/macbookpro_small.jpg);
@@ -344,14 +390,31 @@ footer{
   .footcen div{
     width:100%;
     float:none;
+  }
+  .footcen div.foot_box{
     border-bottom: 1px solid rgb(227, 227, 227);
   }
   .footcen>div>div:nth-child(2){
     padding:0;
   }
   .footcen div>label{
+    width:100%;
     font-size:14px;
     color:#555;
     line-height:30px;
+    cursor:pointer;
+    display:block;
+    position: relative;
+  }
+  .footcen div>label:after{
+    content: '+';
+    position:absolute;
+    right:10px;
+    font-weight: normal;
+    vertical-align: middle;
+    -webkit-transition: -webkit-transform .3s ease;
+    transition: -webkit-transform .3s ease;
+    transition: transform .3s ease;
+    transition: transform .3s ease, -webkit-transform .3s ease;
   }
 }

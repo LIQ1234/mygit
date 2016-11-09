@@ -14,7 +14,7 @@ a{
 .header{
   width:100%;
   background: rgba(0,0,0,0.8);
-  position:fixed;
+  position:relative;
   z-index:9;
   .clear();
 }
@@ -53,13 +53,15 @@ a{
   position:relative;
   overflow: hidden;
   transition: all 0.5s ease-in-out 0s;
-
 }
 .banner>div{
   width:100%;height:540px;
   position:absolute;
   top:0;left:0;
   z-index:2;
+}
+.banner>div:nth-child(2),.banner>div:nth-child(3){
+  left:100%;
 }
 .banner>div>a{
   width:100%;height:540px;
@@ -78,28 +80,31 @@ a{
 }
 .banner>div>a>div{
   width:100%;height:100%;
-}
-.banner>div>a>div{
-  background-size: auto 100%;
-  background-position: top center;
   background-repeat: no-repeat;
 }
 .banner>div:nth-child(1)>a>div{
+  background-size: auto 80%;
+  background-position:  center 150%;
   background-image:url(../img/macbookpro_large.jpg);
 }
 .banner>div:nth-child(1)>a>h1,.banner>div:nth-child(1)>a>h2{
-  color:#000;
+  color:#222;
+}
+.banner>div:nth-child(1)>a{
+  background:#fff;
 }
 .banner>div:nth-child(2)>a{
   background:#000;
 }
 .banner>div:nth-child(2)>a>div{
   background-image:url(../img/iphone_large.jpg);
+  background-size:contain;
+  background-position:bottom center;
 }
 .banner>div:nth-child(3)>a>div{
   background-image:url(../img/event_large.jpg);
-  background-position:50% 30%;
-  background-size:100% 205%;
+  background-position:50% 40%;
+  background-size:cover;
 }
 
 .nextbox>li{
@@ -140,12 +145,21 @@ a{
   .clear();
 }
 .banner>.point>li{
-  width:25%;height:3px;
+  width:25%;height:5px;
+  border-radius:5px;
   background:rgba(255,255,255,0.5);
   margin-right:5%;
    float: left;
   cursor:pointer;
+  position:relative;
  }
+.progress{
+  width:0;height:100%;
+  border-radius:5px;
+  position:absolute;
+  top:0;left:0;
+  background:rgba(0,0,0,0.9);
+}
 /*nav*/
 .pic{
   width:100%;
@@ -163,7 +177,7 @@ a{
 .pic>ul>li>a{
   background-position:center center;
   background-repeat:no-repeat;
-  background-size:100% 100%;
+  background-size:cover;
   height:200px;
 }
 .pic>ul>li:nth-child(1)>a{
@@ -184,7 +198,6 @@ a{
   }
   .banner>div:nth-child(3)>a>div{
     background-image:url(../img/event_medium.jpg);
-    background-size:100% 150%;
   }
   .pic>ul>li:nth-child(1)>a{
     background-image:url(../img/nike_watch_medium.jpg);
@@ -370,10 +383,11 @@ footer{
   }
   .banner>div:nth-child(1)>a>div{
     background-image:url(../img/macbookpro_small.jpg);
+    background-size: auto 60%;
+    background-position: center 80%;
   }
   .banner>div:nth-child(3)>a>div{
     background-image:url(../img/event_small.jpg);
-    background-size:100% 100%;
   }
   .pic>ul>li:nth-child(1)>a{
     background-image:url(../img/nike_watch_small.jpg);

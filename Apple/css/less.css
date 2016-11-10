@@ -118,6 +118,12 @@
 .col-s-hide {
   display: none;
 }
+.col-m-hide {
+  display: block;
+}
+.col-l-hide {
+  display: block;
+}
 @media screen and (max-width: 1068px) {
   .container {
     width: 100%;
@@ -219,7 +225,7 @@
     width: 100%;
   }
   .col-s-hide {
-    display: block;
+    display: none;
   }
   .col-m-hide {
     display: none;
@@ -332,7 +338,7 @@
     display: block;
   }
   .col-m-hide {
-    display: block;
+    display: none;
   }
   .col-l-hide {
     display: none;

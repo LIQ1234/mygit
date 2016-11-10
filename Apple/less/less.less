@@ -16,10 +16,16 @@
   }
 
 }
-//最小屏
+//大屏
 .loop();
 .col-s-hide{
   display:none;
+}
+.col-m-hide{
+  display:block;
+}
+.col-l-hide{
+  display:block;
 }
 //中屏
 @media screen and (max-width:@num1){
@@ -28,7 +34,7 @@
   }
   .loop(m);
   .col-s-hide{
-    display:block;
+    display:none;
   }
   .col-m-hide{
     display:none;
@@ -38,7 +44,7 @@
   }
 }
 
-//大屏
+//最小屏
 @media screen and (max-width:@num2){
   .container{
     width:100%;
@@ -48,7 +54,7 @@
     display:block;
   }
   .col-m-hide{
-    display:block;
+    display:none;
   }
   .col-l-hide{
     display:none;

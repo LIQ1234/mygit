@@ -72,7 +72,7 @@ $(function(){
                 now=next;
 
             }).css("zIndex",1)
-        }else{
+        }if(next<now){
             $(".banner>div:eq("+now+")").animate({left:"100%"}).css("zIndex",1);
             $(".banner>div").eq(next).css({
                 width:"80%",height:"80%",left:0
@@ -97,9 +97,18 @@ $(function(){
     $(".footcen .head").on("click",function(){
         $(this).siblings(".foot_son").slideToggle();
     })
+
+
+    var clientW=$(window).width();
+    var clientH=$(window).height();
+    $(".small_nav").css({
+        width:clientW,
+        height:clientH
+    })
     $(".menu_open").on("click",function(){
+        // $("body").css({"overflow":"hidden"});
         $(".small_nav").slideDown(1000);
-        // $(".header").hide(1000);
+        // $(".header").hide();
         // $(".banner").hide();
         // $(".pic").hide();
         // $("footer").hide();

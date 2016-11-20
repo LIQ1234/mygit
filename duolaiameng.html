@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>多来A梦</title>
+<style>
+    *{
+        box-sizing:border-box;
+    }
+.box{
+    width:350px;height:500px;
+    position:fixed;
+    top:0;left:0;right:0;bottom:0;
+    margin:auto;
+    perspective: 800px;
+}
+.head{
+    width:310px;height:300px;
+    position:relative;
+    margin:0 auto;
+    border:2px solid #333;
+    border-radius:47%;
+    background: radial-gradient(circle at -20% 125% ,#111 20%,#07beea 50%,#0EADD6 80%,#fff 95%);
+    box-shadow: -5px 10px 15px rgba(0,0,0,0.45);
+    transform-style:preserve-3d;
+}
+    .face{
+        width:264px;height:216px;
+        background:#fff;
+        border:2px solid #000;
+        border-radius:50%;
+        position: absolute;
+        left:0;right:0;bottom:10px;
+        margin:auto;
+        background: -webkit-gradient(linear, right top, left bottom, from(#fff),color-stop(0.75,#fff),color-stop(0.83,#eee),color-stop(0.90,#999),color-stop(0.95,#444), to(#000));
+        transform-style:preserve-3d;
+    }
+    .eyes{
+        width:156px;height:85px;
+        position:absolute;
+        left:0;right:0;top:-15%;
+        margin:auto;
+    }
+    .e-left,.e-right{
+        float: left;
+        position: relative;
+        width:78px;height:83px;
+        background:#fff;
+        border:2px solid #000;
+        border-radius:45%;
+    }
+    .e-lcent,.e-rcent{
+        width:15px;height:15px;
+        background:#333;
+        border-radius:50%;
+        position: absolute;
+    }
+    .e-lcent{
+        right:20%;bottom:20%;
+        animation:movel 3s ease infinite 1s;
+    }
+    .e-rcent{
+        left:20%;bottom:20%;
+        animation:mover 3s ease infinite 2s;
+    }
+    @keyframes movel {
+        0%{
+            right:20%;bottom:20%;
+        }
+        25%{
+            right:20%;bottom:50%;
+        }
+        50%{
+            right:20%;bottom:20%;
+        }
+        75%{
+            right:0%;bottom:20%;
+        }
+        100%{
+            right:20%;bottom:20%;
+        }
+    }
+    @keyframes mover {
+        0%{
+            left:20%;bottom:20%;
+        }
+        25%{
+            left:20%;bottom:50%;
+        }
+        50%{
+            left:20%;bottom:20%;
+        }
+        75%{
+            left:0%;bottom:20%;
+        }
+        100%{
+            left:20%;bottom:20%;
+        }
+    }
+    .nose{
+        width:40px;height:40px;
+        border-radius:50%;
+        border:2px solid #000;
+        background:radial-gradient(circle at 70% 40%,#fff 1%,#c93e00 25%);
+        position:absolute;
+        left:0;right:0;top:36px;
+        z-index:2;
+        margin:auto;
+    }
+    .shuline{
+        width:3px;height:120px;
+        background:#333;
+        position: absolute;
+        left:0;right:0;top:50px;
+        margin:auto;
+    }
+    .mouthbox{
+        width:160px;height:80px;
+        border-radius:50%;
+        position: absolute;
+        top:110px;
+        left:0;right:0;
+        margin:auto;
+        overflow: hidden;
+    }
+    .mouth{
+        width:250px;height:350px;
+        position: absolute;
+        left:-45px;top:-290px;
+        border-bottom:3px solid #333;
+        border-radius:50%;
+    }
+    .line-left,.line-right{
+        width:60px;height:2px;
+        background:#333;
+        position: absolute;
+        top:100px;
+    }
+    .line-left{
+        left:30px;
+    }
+    .line-right{
+        right:30px;
+    }
+    .line-left:before,.line-right:before,.line-left:after,.line-right:after{
+        content:"";
+        width:60px;height:2px;
+        background:#333;
+        position: absolute;
+    }
+    .line-left:before{
+        transform:rotate(25deg);
+        top:-20px;left:2px;
+    }
+    .line-left:after{
+        transform:rotate(-25deg);
+        top:20px;left:2px;
+    }
+    .line-right:before{
+        transform:rotate(-25deg);
+        top:-20px;right:2px;
+    }
+    .line-right:after{
+        transform:rotate(25deg);
+        top:20px;right:2px;
+    }
+
+
+    .bozi{
+        width:232px;height:24px;
+        background:-webkit-gradient(linear,left top,left bottom,from(#ca4100),to(#800400));
+        border:2px solid #000;
+        border-radius:25px;
+        position: absolute;
+        z-index:9;
+        left:0;right:0;top:270px;
+        margin:auto;
+    }
+    .ling{
+        width:44px;height:44px;
+        border:2px solid #000;
+        border-radius:50%;
+        background:-webkit-gradient(linear,left top,left bottom,from(#f9f12a),to(#a9a100));
+        position:absolute;
+        left:0;right:0;top:10px;
+        margin:auto;
+    }
+    .l-kuang{
+        width:40px;height:8px;
+        border:2px solid #333;
+        background: #f9f12a;
+        position: absolute;
+        top:10px;
+    }
+    .l-line{
+        width: 3px;height: 15px;
+        background: #000;
+        position: absolute;
+        bottom: 0px;
+        left: 18px;
+    }
+    .l-point{
+        width: 12px;
+        height: 10px;
+        border-radius: 5px;
+        background: #000;
+        position: absolute;
+        bottom:10px;
+        left: 14px;
+    }
+    .l-light{
+        width: 10px;height: 10px;
+        border-radius: 10px;
+        box-shadow: 19px 8px 5px #fff;
+        position: absolute;
+        opacity: 0.7;
+        top: -2px;
+        left: 5px;
+    }
+
+
+    .arm{
+        width:80px;height:50px;
+        position:relative;
+    }
+    .a-left,.a-right{
+        width:100%;height:100%;
+        background:#0096be;
+        border:1px solid #000;
+        position:absolute;
+        top:-14px;
+    }
+    .a-left{
+        left:1px;
+        transform-origin:right;
+        transform:rotate(-40deg);
+        box-shadow: -5px 7px 10px rgba(0,0,0,0.25);
+    }
+    .a-right{
+        left:268px;
+        transform-origin:left;
+        transform:rotate(40deg);
+        background: -webkit-gradient(linear, left top, left bottom, from(#07beea),color-stop(0.85,#07beea), to(#555));
+    }
+    .hand-left,.hand-right {
+        width: 60px;
+        height: 60px;
+        border: 2px solid #000;
+        border-radius: 46%;
+        background: -webkit-gradient(linear, right top, left bottom, from(#fff),color-stop(0.5,#fff),color-stop(0.70,#eee),color-stop(0.8,#ddd), to(#999));
+        position: absolute;
+        top:-5px;
+    }
+    .hand-left{
+        left:-30px;
+        transform:rotate(40deg);
+    }
+    .hand-right{
+        right:-30px;
+        transform:rotate(-40deg);
+    }
+
+
+    .body{
+        width:220px;height:180px;
+        background: -webkit-gradient(linear, right top, left top, from(#07beea),color-stop(0.5, #0073b3),color-stop(0.75,#00b0e0), to(#0096be));
+        position:absolute;
+        left:0;right:0;bottom:30px;
+        margin:auto;
+        overflow: hidden;
+    }
+    .du{
+        width:220px;height:130px;
+        border-left:2px solid #333;
+        border-right:2px solid #333;
+        position: absolute;
+        top:55px;
+    }
+    .base{
+        width:170px;height:170px;
+        border:2px solid #000;
+        border-radius:50%;
+        background: -webkit-gradient(linear, right top, left bottom, from(#fff),color-stop(0.75,#fff),color-stop(0.83,#eee),color-stop(0.90,#999),color-stop(0.95,#444), to(#000));
+        position:absolute;
+        top:-40px;
+        left:0;right:0;
+        margin:auto;
+    }
+    .base-cent {
+        width: 130px;
+        height: 65px;
+        border: 2px solid #000;
+        border-radius: 0 0 65px 65px;
+        position:absolute;
+        top:70px;bottom:0;left:0;right:0;
+        margin:auto;
+        background: -webkit-gradient(linear, right top, left bottom, from(#fff),color-stop(0.70,#fff),color-stop(0.75,#f8f8f8),color-stop(0.80,#eee),color-stop(0.88,#ddd), to(#fff));
+    }
+    .ao{
+        width:30px;height:15px;
+        border:2px solid #333;
+        border-radius: 15px 15px 0 0;
+        position:absolute;
+        left:0;right:0;bottom:-2px;
+        margin:auto;
+        background:#fff;
+    }
+    .foot{
+        width:258px;height:30px;
+        position: absolute;
+        left:0;right:0;
+        bottom:0;
+        z-index:1;
+        margin:auto;
+    }
+    .f-left,.f-right{
+        width:125px;height:30px;
+        background: -webkit-gradient(linear, right top, left bottom, from(#fff),color-stop(0.75,#fff),color-stop(0.85,#eee), to(#999));
+        box-shadow: -6px 0px 10px rgba(0,0,0,0.35);
+        border:2px solid #333;
+    }
+    .f-left{
+        border-radius:80px 60px 60px 40px;
+        float: left;
+    }
+    .f-right{
+        border-radius:60px 80px 40px 60px;
+        float: right;
+    }
+
+
+
+    .shadow-left{
+        width: 85px;height: 195px;
+        box-shadow: -100px 10px 15px rgba(0,0,0,0.25);
+        position: absolute;
+        top: 250px;
+        left: 143px;
+        opacity: 0.5;
+        transform: rotate(-20deg);
+        border-radius: 40px ;
+    }
+    .shadow-outleft{
+        width: 30px;height: 200px;
+        box-shadow: -10px 10px 15px rgba(0,0,0,0.45);
+        position: absolute;
+        top: 270px;
+        left: 66px;
+        z-index: -1;
+    }
+    .shadow-outright{
+        width: 30px;height: 200px;
+        box-shadow: 5px 5px 20px rgba(0,0,0,0.35);
+        position: absolute;
+        top: 270px;
+        left: 250px;
+        z-index: -10;
+    }
+</style>
+    <script>
+        window.onload=function(){
+            var box=document.querySelector(".box");
+            var angle1=0,angle=0;
+            document.onmousedown=function (e) {
+                var startx=e.clientX;
+                var starty=e.clientY;
+                document.onmousemove=function (e) {
+                    var movex=e.clientX;
+                    var movey=e.clientY;
+                    e.preventDefault();
+                    angle=Math.abs(movex-startx)>Math.abs(movey-starty)?movex-startx:movey-starty;
+                    box.style.transform="translate3d(0,0,-500px) rotate3d(0,1,0,"+(angle1+angle)+"deg)";
+                }
+                document.onmouseup=function(){
+                    angle1+=angle;
+                    document.onmouseup=null;
+                    document.onmousemove=null;
+                }
+                e.preventDefault();
+            }
+        }
+
+    </script>
+</head>
+<body>
+<div class="box">
+    <div class="head">
+        <div class="face">
+            <div class="eyes">
+                <div class="e-left">
+                    <div class="e-lcent"></div>
+                </div>
+                <div class="e-right">
+                    <div class="e-rcent"></div>
+                </div>
+            </div>
+            <div class="nose"></div>
+            <div class="shuline"></div>
+            <div class="line-left"></div>
+            <div class="line-right"></div>
+            <div class="mouthbox">
+                <div class="mouth"></div>
+            </div>
+        </div>
+    </div>
+    <div class="bozi">
+        <div class="ling">
+            <div class="l-kuang"></div>
+            <div class="l-line"></div>
+            <div class="l-point"></div>
+            <div class="l-light"></div>
+        </div>
+    </div>
+    <div class="arm">
+        <div class="a-left">
+            <div class="hand-left"></div>
+        </div>
+        <div class="a-right">
+            <div class="hand-right"></div>
+        </div>
+    </div>
+    <div class="body">
+        <div class="du"></div>
+        <div class="base">
+            <div class="base-cent"></div>
+        </div>
+        <div class="ao"></div>
+    </div>
+    <div class="foot">
+        <div class="f-left"></div>
+        <div class="f-right"></div>
+    </div>
+    <div class="shadow-left"></div>
+    <div class="shadow-outleft"></div>
+    <div class="shadow-outright"></div>
+</div>
+</body>
+</html>
